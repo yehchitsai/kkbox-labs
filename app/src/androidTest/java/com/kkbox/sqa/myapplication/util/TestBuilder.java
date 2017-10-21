@@ -81,6 +81,9 @@ public class TestBuilder  {
 
         if(mRequireLogin == true && mHasLogin == false) {
             new KKLoginPage(mDevice).loginViaEmail(mUsername, mPassword);
+
+            // Dismiss Drawer
+            mDevice.wait(Until.findObject(By.res(APP_PACKAGE, "menu_global_search")), LAUNCH_TIMEOUT).click();
         }
 
         if(mDisableTutorial == true) {
