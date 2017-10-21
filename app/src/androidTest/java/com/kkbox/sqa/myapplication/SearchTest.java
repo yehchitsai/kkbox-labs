@@ -39,11 +39,12 @@ public class SearchTest {
     @BeforeClass
     public static void login() {
         // TODO
-//        kkbox = new TestBuilder()
-//                .loginViaEmail("demo171018@gmail.com", "1234")
-//                .disableTrialMessage()
-//                .disableTutorial()
-//                .launch();
+        // kkbox = new TestBuilder()
+        //        .loginViaEmail("demo171018@gmail.com", "1234")
+        //        .disableTrialMessage()
+        //        .disableTutorial()
+        //        .launch();
+
         mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
 
         // Trial Message Handler
@@ -77,6 +78,9 @@ public class SearchTest {
             mDevice.wait(Until.findObject(By.res(APP_PACKAGE, "text_uid")), TIMEOUT).setText("demo171018@gmail.com");
             mDevice.wait(Until.findObject(By.res(APP_PACKAGE, "text_password")), TIMEOUT).setText("1234");
             mDevice.wait(Until.findObject(By.res(APP_PACKAGE, "button_login")), TIMEOUT).click();
+
+            // Dismiss Drawer
+            mDevice.wait(Until.findObject(By.res(APP_PACKAGE, "menu_global_search")), LAUNCH_TIMEOUT).click();
         }
 
         // Open Search

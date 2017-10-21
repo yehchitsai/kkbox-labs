@@ -31,6 +31,7 @@ public class TestBuilder  {
     private String mPassword;
     private Boolean mRequireLogin;
     private Boolean mHasLogin;
+    private Boolean mDisableTutorial;
 
     public TestBuilder() {
         // TODO
@@ -68,11 +69,15 @@ public class TestBuilder  {
         context.startActivity(intent);
 
         // TODO: Login KKBOX
-//        mHasLogin = !mDevice.wait(Until.hasObject(KKLoginPage.LOGIN_BUTTON), TIMEOUT);
-//
-//        if(mRequireLogin == true && mHasLogin == false) {
-//            new KKLoginPage(mDevice).loginViaEmail(mUsername, mPassword);
-//        }
+        // mHasLogin = !mDevice.wait(Until.hasObject(KKLoginPage.LOGIN_BUTTON), TIMEOUT);
+        // if(mRequireLogin == true && mHasLogin == false) {
+        //    new KKLoginPage(mDevice).loginViaEmail(mUsername, mPassword);
+        //
+        //    // Dismiss Drawer
+        //    mDevice.wait(Until.findObject(By.res(APP_PACKAGE, "menu_global_search")), LAUNCH_TIMEOUT).click();
+        // }
+
+        // TODO: Disable Tutorial
 
         return new KKPage(mDevice);
     }
