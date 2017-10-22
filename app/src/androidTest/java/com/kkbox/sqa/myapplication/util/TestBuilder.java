@@ -68,7 +68,7 @@ public class TestBuilder  {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);    // Clear out any previous instances
         context.startActivity(intent);
 
-        // TODO: Login KKBOX
+        // TODO: Login Handler
         // mHasLogin = !mDevice.wait(Until.hasObject(KKLoginPage.LOGIN_BUTTON), TIMEOUT);
         // if(mRequireLogin == true && mHasLogin == false) {
         //    new KKLoginPage(mDevice).loginViaEmail(mUsername, mPassword);
@@ -77,7 +77,7 @@ public class TestBuilder  {
         //    mDevice.wait(Until.findObject(By.res(APP_PACKAGE, "menu_global_search")), LAUNCH_TIMEOUT).click();
         // }
 
-        // TODO: Disable Tutorial
+        // TODO: Tutorial Handler
 
         return new KKPage(mDevice);
     }
@@ -117,7 +117,7 @@ public class TestBuilder  {
                     try {
                         buttonOK.click();
                     } catch (UiObjectNotFoundException e) {
-                        Assert.fail(e.getMessage());
+                        // do nothing
                     }
 
                     return true;
