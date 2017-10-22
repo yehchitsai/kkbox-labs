@@ -132,7 +132,7 @@ public class TestBuilder  {
                     try {
                         buttonOK.click();
                     } catch (UiObjectNotFoundException e) {
-                        Assert.fail(e.getMessage());
+                        // do nothing
                     }
 
                     return true;
