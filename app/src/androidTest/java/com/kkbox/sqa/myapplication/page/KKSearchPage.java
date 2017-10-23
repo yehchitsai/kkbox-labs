@@ -9,6 +9,7 @@ import static org.junit.Assert.assertTrue;
 
 public class KKSearchPage extends KKPage {
     public static final BySelector SEARCH_FIELD = By.res(APP_PACKAGE, "search_src_text");
+    public static final BySelector SEARCH_BUTTON = By.res(APP_PACKAGE, "menu_global_search");
 
     public KKSearchPage(UiDevice device) {
         super(device);
