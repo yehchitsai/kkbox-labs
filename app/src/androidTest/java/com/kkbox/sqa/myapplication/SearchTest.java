@@ -12,7 +12,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
-public class SearchTest {
+public class
+
+SearchTest {
     private static KKPage kkbox;
 
     @BeforeClass
@@ -48,5 +50,17 @@ public class SearchTest {
         kkbox.is(KKPage.class).openSearch()
              .is(KKSearchPage.class).search("numb encore")
              .is(KKSearchPage.class).checkSongResult("Numb/Encore");
+    }
+    @Test
+    public void testSearchSongTooShy() {
+        kkbox.is(KKPage.class).openSearch()
+                .is(KKSearchPage.class).search("too shy")
+                .is(KKSearchPage.class).checkSongResult("Kajagoogoo - The Very Best Of Kajagoogoo");
+    }
+    @Test
+    public void testSearchArtistKajagoogoo() {
+        kkbox.is(KKPage.class).openSearch()
+                .is(KKSearchPage.class).search("kajagoogoo")
+                .is(KKSearchPage.class).checkArtistResult("Kajagoogoo (卡加咕咕合唱團)");
     }
 }
