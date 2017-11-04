@@ -55,7 +55,7 @@ SearchTest {
     public void testSearchSongTooShy() {
         kkbox.is(KKPage.class).openSearch()
                 .is(KKSearchPage.class).search("too shy")
-                .is(KKSearchPage.class).checkSongResult("Kajagoogoo - The Very Best Of Kajagoogoo");
+                .is(KKSearchPage.class).checkSongResult("Too Shy");
     }
     @Test
     public void testSearchArtistKajagoogoo() {
